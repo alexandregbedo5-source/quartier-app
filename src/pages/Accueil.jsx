@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../supabaseClient'
 import { useAuth } from '../context/AuthContext'
+import BannierePublicitaire from '../components/BannierePublicitaire'
 
 const CATEGORIES = [
   'Toutes', 'Bricolage', 'Jardinage', 'Cuisine', "Garde d'enfants",
@@ -179,7 +180,7 @@ export default function Accueil() {
           </div>
         ))}
       </div>
-
+        <BannierePublicitaire />
       {/* Filtres type */}
       <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' }}>
         {[

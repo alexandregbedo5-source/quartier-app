@@ -94,7 +94,7 @@ export default function APropos() {
                 color: 'var(--primary)', fontSize: 14, fontWeight: 600,
                 display: 'flex', alignItems: 'center', gap: 6
               }}>
-                📞 01 42 47 04 20
+                📞 01 42 47 04 80
               </a>
               <a href="tel:0193716700" style={{
                 color: 'var(--primary)', fontSize: 14, fontWeight: 600,

@@ -63,7 +63,7 @@ export default function Footer() {
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               <a href="tel:0142470420" style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, display: 'flex', alignItems: 'center', gap: 8 }}>
-                📞 <span>01 42 47 04 20</span>
+                📞 <span>01 42 47 04 80</span>
               </a>
               <a href="tel:0193716700" style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, display: 'flex', alignItems: 'center', gap: 8 }}>
                 📞 <span>01 93 71 67 00</span>
