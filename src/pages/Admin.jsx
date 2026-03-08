@@ -72,14 +72,15 @@ export default function Admin() {
       const ext = imageFile.name.split('.').pop()
       const path = `pub_${Date.now()}.${ext}`
       const { error: uploadError } = await supabase.storage
-        .from('avatars').upload(path, imageFile, { upsert: true })
+        .from('publicites')
+        .upload(path, imageFile, { upsert: true })
       if (uploadError) {
         console.error(uploadError)
         setMsgPub('Erreur upload image.')
         setUploadLoading(false)
         return
       }
-      const { data } = supabase.storage.from('avatars').getPublicUrl(path)
+      const { data } = supabase.storage.from('publicites').getPublicUrl(path)
       image_url = data.publicUrl
     }
 
@@ -90,7 +91,7 @@ export default function Admin() {
 
     if (error) {
       console.error(error)
-      setMsgPub('Erreur lors de l\'ajout.')
+      setMsgPub("Erreur lors de l'ajout.")
       setUploadLoading(false)
       return
     }
@@ -228,7 +229,6 @@ export default function Admin() {
       {/* PUBLICITÉS */}
       {onglet === 'pubs' && (
         <div>
-          {/* Formulaire */}
           <div style={{ background: 'white', borderRadius: 16, border: '1px solid var(--border)', padding: '24px', marginBottom: 24 }}>
             <h3 style={{ fontSize: 18, marginBottom: 20 }}>Ajouter une publicité</h3>
 
@@ -264,7 +264,7 @@ export default function Admin() {
                   onClick={() => fileRef.current.click()}
                   style={{ padding: '9px 18px', borderRadius: 8, border: '1.5px solid var(--border)', background: 'white', color: '#374151', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
                 >
-                  {imagePreview ? 'Changer l\'image' : 'Choisir une image'}
+                  {imagePreview ? "Changer l'image" : 'Choisir une image'}
                 </button>
                 {imagePreview && (
                   <button
@@ -293,7 +293,6 @@ export default function Admin() {
             </button>
           </div>
 
-          {/* Liste pubs */}
           {pubs.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '40px 20px', background: 'white', borderRadius: 16, border: '2px dashed var(--border)' }}>
               <div style={{ fontSize: 40, marginBottom: 10 }}>📢</div>
